@@ -1,0 +1,141 @@
+POST http://localhost:8080/dashboard/videos/createSection
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTc2ODc3NjMsImlhdCI6MTY5NzY1MTc2M30.G4y4rgy8WFP7hgFP9aXCmNtg4m_DxI7tWESWsOQR-x4
+
+{
+  "name": "Una seccion nueva 12",
+  "addedBy": 3
+}
+
+###
+
+GET http://localhost:8080/dashboard/videos/getAllVideosGroupedBySections
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTk5MzAzNDQsImlhdCI6MTY5OTg5NDM0NH0.SUVs4wenSaXCUmFRD5dNbgQa63PeWJoO_g1vH5lkLOQ
+
+###
+
+POST http://localhost:8080/dashboard/videos/insertVideo
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTc2OTE4NTUsImlhdCI6MTY5NzY1NTg1NX0.SGywX8ERD0qyxZGagERoXsn3ksytnVNg1x5SKMWjzG4
+
+
+{
+  "title": "Título del Video de Ejemplo",
+  "url": "https://www.youtube.com/watch?v=fSKQRDq3RkM",
+  "content": "Contenido del video de ejemplo",
+  "sequenceNumber": 1,
+  "sectionId": 4,
+  "addedBy": 3
+}
+
+###
+
+PUT http://localhost:8080/dashboard/videos/updateSectionSequence
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTc4NTU4MDAsImlhdCI6MTY5NzgxOTgwMH0.CqPslk200vfOAkBRfQiqhb9SXSYaanA4_LAcNjiVJ_w
+
+{
+  "section_id": 4,
+  "new_sequence_number": 2,
+  "addedBy": 3  
+}
+
+
+###
+
+PUT http://localhost:8080/dashboard/videos/updateVideoSequence
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTc4NTU4MDAsImlhdCI6MTY5NzgxOTgwMH0.CqPslk200vfOAkBRfQiqhb9SXSYaanA4_LAcNjiVJ_w
+
+{
+  "section_id": 1,
+  "video_id": 2,
+  "new_sequence_number": 3,
+  "addedBy": 3  
+}
+
+
+###
+
+PUT http://localhost:8080/dashboard/videos/updateSectionName
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTc4NzE3NTIsImlhdCI6MTY5NzgzNTc1Mn0.8CDwqgUVjGi-6XKGdObhuYIGG9MphOoLArKQg8HJCtQ
+
+{
+  "section_id": 1,
+  "new_name": "Nuevo nombresito de la sección"
+}
+
+
+###
+
+PUT http://localhost:8080/dashboard/videos/updateVideoTitle
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTc4NzE3NTIsImlhdCI6MTY5NzgzNTc1Mn0.8CDwqgUVjGi-6XKGdObhuYIGG9MphOoLArKQg8HJCtQ
+
+{
+  "video_id": 1,
+  "new_title": "Nuevo título del video"
+}
+
+###
+
+PUT http://localhost:8080/dashboard/videos/deactivateVideo
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTgzOTcwNDUsImlhdCI6MTY5ODM2MTA0NX0.AtiwHuCRAwxWErqraplfIgcsNYLsGOKfe0TZDmX9EyM
+
+{
+  "video_id": 1
+}
+
+###
+PUT http://localhost:8080/dashboard/videos/deactivateSection
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTgzOTcwNDUsImlhdCI6MTY5ODM2MTA0NX0.AtiwHuCRAwxWErqraplfIgcsNYLsGOKfe0TZDmX9EyM
+
+{
+  "section_id": 1
+}
+
+###
+
+PUT http://localhost:8080/dashboard/videos/updateVideoUrl/{videoId}
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTg0MDg1MzgsImlhdCI6MTY5ODM3MjUzOH0.bUEz0gE6sL2TwhuPOPD52gggRmGYwgMzUHVLf-dDFiU
+
+{
+  "newUrl": "https://www.newurl.com/newvideo"
+}
+
+
+###
+
+PUT http://localhost:8080/dashboard/videos/updateVideoDescription/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE2OTg0OTA5NTgsImlhdCI6MTY5ODQ1NDk1OH0.P2-ZaadY8uLKrZC1fCnk8zeEYU1Qz2ufqrhHu7OuDcI
+
+{
+  "newDescription": "Nueva descripción del video 1 por el nuevo metodo"
+}
+
+
+###
+
+PUT http://localhost:8080/dashboard/videos/markVideoAsWatched/1/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDMyMzQ1NzAsImlhdCI6MTcwMzE5ODU3MH0.AGbocg8R1D-1xKNGyJara5D8ORB8_58vK0AKQakJLtk
+
+###
+
+PUT http://localhost:8080/dashboard/videos/unmarkVideoAsWatched/1/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDMyMzQ1NzAsImlhdCI6MTcwMzE5ODU3MH0.AGbocg8R1D-1xKNGyJara5D8ORB8_58vK0AKQakJLtk
+
+
+###
+
+GET http://localhost:8080/dashboard/videos/getAllVideosBySectionsAndUser/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE3MDAyOTYxODUsImlhdCI6MTcwMDI2MDE4NX0.KAKdGwRzsGxy5bPcP_eVrUAQiB3muEBm9Fg4iP6n1kA
+
+
+###

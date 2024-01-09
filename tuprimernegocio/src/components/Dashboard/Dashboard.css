@@ -1,0 +1,49 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1px -5%; /* Puedes ajustar este valor para reducir aún más la altura */
+  height: 40px; /* Establecer una altura específica */
+  position: relative; /* Agregar posición relativa para que z-index funcione */
+}
+
+.view-selector,
+.logout-button {
+  position: relative; /* Agregar posición relativa para que z-index funcione */
+  z-index: 1; /* Asegurar que el view-selector esté en primer plano */
+}
+
+.h1-container {
+  position: absolute;
+  top: -5%;  /* Mueve el elemento 10% hacia arriba respecto a su posición original */
+  left: 30%;
+  margin: 10px;
+}
+
+.logout-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .view-selector,
+  .logout-button {
+    margin-top: 5px;
+  }
+}

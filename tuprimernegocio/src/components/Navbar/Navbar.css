@@ -1,0 +1,74 @@
+.navbar {
+  background-color: black;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; 
+}
+
+.navbar-logo {
+  height: 50px; 
+  margin-right: 1rem;
+}
+
+.navbar-title {
+  color: white;
+  font-weight: bold;
+  margin-right: 1rem;
+  font-size: 0.9rem; /* Ajusta este valor según prefieras. */
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  transition: all 0.3s ease;
+  margin-left: auto; /* Esto mueve las opciones más a la derecha */
+}
+
+.navbar-list li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.navbar-list li a:hover {
+  color: #ddd;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: black;
+    width: 70%;
+    border-radius: 0 0 5px 5px;
+    z-index: 10;
+  }
+
+  .navbar-list.active {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+  }
+}

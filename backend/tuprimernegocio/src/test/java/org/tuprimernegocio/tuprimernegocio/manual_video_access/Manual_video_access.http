@@ -1,0 +1,41 @@
+GET http://localhost:8080/manual-video-access/active-users/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDQzMjAyNDIsImlhdCI6MTcwNDI4NDI0Mn0.77fWqmeZYOOv5GmL_fVGSnJIRhpxq0GRpY7mE5FPAhg
+
+###
+
+
+# GET http://localhost:8080/manual-video-access/active-emails
+
+POST http://localhost:8080/manual-video-access/insert-video-access
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDQyNjkyMTAsImlhdCI6MTcwNDIzMzIxMH0.ToCGaUI_sw3fuFZQ_HdLTSKB62fJGk-pnWd--0rV8Lo
+
+{
+  "email": "nuevo_usuario@example.com",
+  "adminId": 3
+}
+
+###
+
+PUT http://localhost:8080/manual-video-access/update-video-access-email
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDQyNzQyMjgsImlhdCI6MTcwNDIzODIyOH0.uy2EaGqxC0hLqqD54UZCtblsceO-KBLSxhr69by17Ds
+
+{
+  "accessId": 1,
+  "newEmail": "nuevo_email_pruebita@example.com",
+  "adminId": 3
+}
+
+###
+
+PUT http://localhost:8080/manual-video-access/deactivate-video-access
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDQyNzQyMjgsImlhdCI6MTcwNDIzODIyOH0.uy2EaGqxC0hLqqD54UZCtblsceO-KBLSxhr69by17Ds
+
+{
+  "accessId": 2,
+  "adminId": 3
+}
+
+###

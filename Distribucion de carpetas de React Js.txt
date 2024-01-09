@@ -1,0 +1,119 @@
+TUPRIMERNEGOCIO
+├── node_modules/
+├── public/
+│   ├── TPNlogo.png
+│   └── pages/
+│       └── QuienesSomosPictures/
+│           ├── around.jpeg
+│           └── front.jpeg
+├── src/
+│   ├── components/
+│   │   ├── Dashboard/
+│   │   │   ├── Dashboard.js
+│   │   │   ├── Dashboard.css
+│   │   │   ├── ResetPassword/
+│   │   │   │   ├── ResetPassword.js
+│   │   │   │   └── ResetPassword.css
+│   │   │   ├── AdminView/
+│   │   │   │   ├── UserManagement/             
+│   │   │   │   │   ├── UserManagement.js      
+│   │   │   │   │   └── UserManagement.css   
+│   │   │   │   ├── ManualvideoAccess/
+│   │   │   │   │   ├── ManualvideoAccess.jsx
+│   │   │   │   │   └── ManualvideoAccess.css
+│   │   │   │   ├── Videos/
+│   │   │   │   │   ├── Videos.js
+│   │   │   │   │   └── Videos.css
+│   │   │   │   ├── AdminView.js
+│   │   │   │   └── AdminView.css
+│   │   │   ├── DesignerView/
+│   │   │   │   ├── DesignerView.js
+│   │   │   │   └── DesignerView.css
+│   │   │   └── UserView/
+│   │   │       ├── Payment/
+│   │   │       │   ├── PaymentView.jsx
+│   │   │       ├── Videos/
+│   │   │       │   ├── Videos.js
+│   │   │       │   └── Videos.css
+│   │   │       ├── UserView.js
+│   │   │       └── UserView.css
+│   │   ├── Navbar/
+│   │   │   ├── Navbar.js
+│   │   │   └── Navbar.css
+│   │   ├── Footer/
+│   │   │   ├── Footer.js
+│   │   │   └── Footer.css
+│   │   └── PrivateRoute/
+│   │       └── PrivateRoute.js
+│   ├── pages/
+│   │   ├── Home/
+│   │   │   ├── HeaderHome.js
+│   │   │   ├── HeaderHome.css
+│   │   │   ├── BodyHome.js
+│   │   │   └── BodyHome.css
+│   │   ├── QuienesSomos/
+│   │   │   ├── HeaderQuienesSomos.js
+│   │   │   ├── HeaderQuienesSomos.css
+│   │   │   ├── BodyQuienesSomos.js
+│   │   │   └── BodyQuienesSomos.css
+│   │   ├── Anuncios/
+│   │   │   ├── HeaderAnuncios.js
+│   │   │   ├── HeaderAnuncios.css
+│   │   │   ├── BodyAnuncios.js
+│   │   │   └── BodyAnuncios.css
+│   │   ├── Contactenos/
+│   │   │   ├── HeaderContactenos.js
+│   │   │   ├── HeaderContactenos.css
+│   │   │   ├── BodyContactenos.js
+│   │   │   └── BodyContactenos.css
+│   │   └── IniciarSesion/
+│   │       ├── HeaderIniciarSesion.js
+│   │       ├── HeaderIniciarSesion.css
+│   │       ├── LoginForm.js
+│   │       ├── LoginForm.css
+│   │       ├── SignupForm.js
+│   │       ├── SignupForm.css
+│   │       ├── ForgotPasswordForm.js
+│   │       ├── ForgotPasswordForm.css
+│   │       ├── BodyIniciarSesion.js
+│   │       └── BodyIniciarSesion.css
+│   ├── store/
+│   │   ├── actions/
+│   │   │   ├── authActions.js
+│   │   │   └── videoAccessActions.js
+│   │   ├── reducers/
+│   │   │   ├── authReducer.js
+│   │   │   └── videoAccessReducer.js
+│   │   └── index.js
+│   ├── App.css
+│   ├── App.js 
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js 
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+
+
+npm install axios
+npm install react-hook-form
+npm install react-redux
+npm install react-router-dom
+npm install redux
+npm install redux-thunk
+npm install react-icons
+npm install react-player
+npm install @babel/plugin-proposal-private-property-in-object --save-dev
+npm install react-youtube
+npm install react-dropzone
+npm install react react-dom react-redux react-hook-form
+npm install @stripe/stripe-js @stripe/react-stripe-js
+npm install react-modal
+
+
+
+

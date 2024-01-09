@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.4</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.tuprimernegocio.library</groupId>
+	<artifactId>database</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>database</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>11</java.version>
+		<mysql.connector>8.0.33</mysql.connector>
+		<jooq.version>3.12.4</jooq.version>
+	</properties>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<!-- Spring Boot Starter Mail -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
+		<!--SPRING
+		BOOT-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!--SPRING
+		BOOT-->
+
+		<!-- DATABASE  JOOQ -->
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq</artifactId>
+			<version>${jooq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq-meta</artifactId>
+			<version>${jooq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq-codegen</artifactId>
+			<version>${jooq.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+		<!-- DATABASE JOOQ -->
+	</dependencies>
+
+	<build>
+		<!--suppress
+		UnresolvedMavenProperty -->
+		<finalName>${project.name}-${project.version}-${project.activeProfiles[0].id}</finalName>
+		<plugins>
+			<!--SPRING
+			BOOT-->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!--SPRING
+			BOOT-->
+
+			<!--MAVEN-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<phase>package</phase>
+						<configuration>
+							<!--to
+							be imported on other projects-->
+							<classifier>database-module</classifier>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!--MAVEN-->
+
+			<!-- DATABASE JOOQ -->
+			<plugin>
+
+				<!-- Specify the maven code generator plugin -->
+				<!-- Use org.jooq for the Open Source Edition org.jooq.pro for commercial
+                    editions, org.jooq.pro-java-6 for commercial editions with Java 6 support,
+                    org.jooq.trial for the free trial edition Note: Only the Open Source Edition
+                    is hosted on Maven Central. Import the others manually from your distribution -->
+				<groupId>org.jooq</groupId>
+				<artifactId>jooq-codegen-maven</artifactId>
+				<version>${jooq.version}</version>
+
+				<!-- The plugin should hook into the generate goal -->
+				<executions>
+					<execution>
+						<id>exec-1</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<!-- Specify the plugin configuration. The configuration format is the
+                    same as for the standalone code generator -->
+						<configuration>
+
+							<!-- JDBC connection parameters -->
+							<jdbc>
+								<driver>com.mysql.cj.jdbc.Driver</driver>
+								<url>${database.url}</url>
+								<user>${database.username}</user>
+								<password>${database.password}</password>
+							</jdbc>
+
+							<!-- Generator parameters -->
+							<generator>
+								<generate>
+									<pojos>true</pojos>
+									<relations>true</relations>
+								</generate>
+								<database>
+									<name>org.jooq.meta.mariadb.MariaDBDatabase</name>
+									<includes>.*</includes>
+									<excludes></excludes>
+									<!-- In case your database supports catalogs, e.g. SQL Server:
+									<inputCatalog>public</inputCatalog> -->
+									<schemata>
+										<schema>
+											<inputSchema>users</inputSchema>
+										</schema>
+										<schema>
+											<inputSchema>videos</inputSchema>
+										</schema>
+										<schema>
+											<inputSchema>email_config</inputSchema>
+										</schema>
+										<schema>
+											<inputSchema>manual_video_access</inputSchema>
+										</schema>									
+									</schemata>
+								</database>
+								<target>
+									<packageName>com.tuprimernegocio.library.database.jooq</packageName>
+									<directory>src/main/java</directory>
+								</target>
+							</generator>
+						</configuration>
+					</execution>
+				</executions>
+
+				<!-- Manage the plugin's dependency -->
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql.connector}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<!-- DATABASE JOOQ -->
+
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>develop</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<database.url>jdbc:mysql://localhost/</database.url>
+				<database.username>root</database.username>
+				<database.password></database.password>
+			</properties>
+		</profile>
+	</profiles>
+
+
+</project>

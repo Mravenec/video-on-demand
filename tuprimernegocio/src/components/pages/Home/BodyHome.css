@@ -1,0 +1,38 @@
+.body-home {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Asegura que los elementos estén centrados en ambas direcciones */
+  padding: 40px;
+  text-align: left;
+  flex-direction: column;
+  height: 100%; /* Para asegurar que ocupe toda la altura y pueda centrar el contenido verticalmente */
+}
+
+.body-home img {
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.body-home p {
+  flex: 1;
+  font-size: 1.2rem; /* Disminuido para pantallas pequeñas */
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .body-home {
+    flex-direction: row;
+  }
+
+  .body-home p {
+    font-size: 1.5rem; /* Ajustado para pantallas más grandes */
+  }
+}

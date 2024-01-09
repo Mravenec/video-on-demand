@@ -1,0 +1,121 @@
+/* Estilo del contenedor principal */
+.videos-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+/* Estilo del contenido principal */
+.main-content {
+  flex-grow: 1;
+  display: relative;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 103vh;
+  width: 150vh;
+  overflow-y: auto;
+}
+
+.ReactPlayer {
+  width: 100% !important;
+  height: 100%;
+  position: relative;
+  margin-left: 1500px;
+  margin-bottom: 20px;
+  margin-right: 500px;
+}
+
+.video-header {
+  margin-bottom: -5px;
+}
+
+.video-content {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1px;
+}
+
+/* Estilo de la barra lateral de videos */
+.SideBarVideos {
+  width: 253px;
+  border-left: 1px solid #ccc;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #fff;
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  right: 0;
+}
+
+.SideBarVideos button {
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s;
+  color: aliceblue;
+}
+
+.SideBarVideos button:hover {
+  background-color: #3b2c2c;
+}
+
+.video-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.video-item:hover {
+  background-color: #f5f5f5;
+}
+
+.video-thumbnail {
+  width: 60px;
+  height: 35px;
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+  border: 1px solid rgb(46, 59, 71);
+  flex-shrink: 0;
+}
+
+.video-item span {
+  flex-grow: 1;
+}
+
+.video-item > span:last-child {
+  margin-left: auto;
+  color: rgb(46, 59, 71);
+}
+
+/* Agrega estilo al botón para que esté centrado entre la descripción y el video */
+.mark-as-watched {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.mark-as-watched button {
+  background-color: #4A80B9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+

@@ -1,0 +1,114 @@
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "secretpassword",
+  "fullName": "Zhang San"
+}
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "email": "ejemplo1@email.com",
+  "password": "contrasena_hash1"
+}
+
+###
+GET http://localhost:8080/findAllUsersByAdmin/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDQ2ODgwODEsImlhdCI6MTcwNDY1MjA4MX0.CwlrhDpFBIGIdngESrI8RhkjKHz45d3xktidV27YNDM
+
+###
+
+POST http://localhost:8080/forgotPassword
+Content-Type: application/json
+
+{
+  "email": "rvenegass28@gmail.com"
+}
+
+###
+
+POST http://localhost:8080/resetPassword
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJwdXJwb3NlIjoicGFzc3dvcmRSZXNldCIsImV4cCI6MTcwMzY1MTA5MiwiaWF0IjoxNzAzNTY0NjkyfQ.JaUTZiHCl8KrR_8Trd3J9A0b3HvHm-GiSQhPzUBmPBA",
+  "newPassword": "nueva_contrasena"
+}
+
+###
+
+GET http://localhost:8080/validateToken
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDQyNzAyNjIsImlhdCI6MTcwNDIzNDI2Mn0.X4eWit2rlc2aJ899BrC-IVPmBYLl01rY6PuvB9LCaNc
+
+###
+
+GET http://localhost:8080/userInfo
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDMyMjk5NDksImlhdCI6MTcwMzE5Mzk0OX0.qJBwKx8fi0jwMYqMr0lILRQ1pSlMIoP7FJwO9V5vw5U
+
+###
+
+POST http://localhost:8080/updatePhones
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDQyNzAyNjIsImlhdCI6MTcwNDIzNDI2Mn0.X4eWit2rlc2aJ899BrC-IVPmBYLl01rY6PuvB9LCaNc
+
+{
+  "userId": 3,
+  "whatsapp": "+1234567890",
+  "otherNumbers": "+0987654321"
+}
+
+###
+
+GET http://localhost:8080/selectPhones/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE3MDA2MjY4NjQsImlhdCI6MTcwMDU5MDg2NH0.9LlRRV77EW8jiwXE2RzCSAN5SED-HB5cfkGD0wRD6SY
+
+###
+
+GET http://localhost:8080/selectAddress/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE3MDA2MzQ0ODIsImlhdCI6MTcwMDU5ODQ4Mn0.RPnrsGweUvlJQvLY7rU-M7mRs6KOUri6Ix-8W10bqaU
+
+
+###
+
+POST http://localhost:8080/updateAddress
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE3MDA2MzQ0ODIsImlhdCI6MTcwMDU5ODQ4Mn0.RPnrsGweUvlJQvLY7rU-M7mRs6KOUri6Ix-8W10bqaU
+
+{
+  "userId": 3,
+  "addressLine1": "Calle 123",
+  "addressLine2": "Apto 456",
+  "province": "Provincia X",
+  "canton": "Cantón Y",
+  "postalCode": "12345"
+}
+
+###
+
+DELETE http://localhost:8080/deleteAddress/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE3MDA2MjIxNzUsImlhdCI6MTcwMDU4NjE3NX0.v8VCnvquuZUntCb6d4QCrx0flXxTDvrnK0DH2kpL5Iw
+
+
+###
+
+PUT http://localhost:8080/updateUserProfilePicture
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE3MDA3MjI4MzgsImlhdCI6MTcwMDY4NjgzOH0.SYgnwLJma7Kn8UYnVuZ9_P-FRquc_b8dhFtCiqb6feI
+
+{
+  "userId": 3,
+  "profilePicture": "base64_encoded_image_data"
+}
+
+###
+
+GET http://localhost:8080/getUserProfilePicture/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydmVuZWdhc3MyOEBnbWFpbC5jb20iLCJleHAiOjE3MDA3MjI4MzgsImlhdCI6MTcwMDY4NjgzOH0.SYgnwLJma7Kn8UYnVuZ9_P-FRquc_b8dhFtCiqb6feI
+###
+
+

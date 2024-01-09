@@ -1,0 +1,88 @@
+.body-anuncios {
+    padding: 40px;
+    background: #fff; /* Fondo blanco para resaltar el contenido */
+    border: 1px solid #eaeaea; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados para un aspecto moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    max-width: 800px; /* Ancho máximo para mantener la legibilidad */
+    margin: 40px auto; /* Centrado con margen vertical */
+    text-align: left; /* Alineación del texto a la izquierda para facilitar la lectura */
+}
+
+.body-anuncios h2 {
+    color: #003366; /* Color azul oscuro para el título de sección */
+    font-size: 28px; /* Tamaño del texto grande para el título */
+    margin-bottom: 20px; /* Espacio después del título */
+}
+
+.body-anuncios p {
+    color: #424242; /* Color gris oscuro para el texto */
+    font-size: 16px; /* Tamaño del texto para una lectura cómoda */
+    line-height: 1.6; /* Espacio entre líneas para mejorar la legibilidad */
+    margin-bottom: 20px; /* Espacio entre párrafos */
+}
+
+.body-anuncios strong {
+    color: #d32f2f; /* Utilizar el mismo color rojo para elementos destacados */
+}
+
+.steps-to-success {
+    margin-top: 30px;
+    background: #f9f9f9; /* Fondo ligeramente gris para la sección de pasos */
+    padding: 20px;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.steps-to-success h3 {
+    color: #003366; /* Color azul oscuro para el título de sección */
+    font-size: 24px; /* Tamaño de fuente para el título de sección */
+    margin-bottom: 15px; /* Espacio debajo del título de la sección */
+}
+
+.steps-to-success ol {
+    counter-reset: step-counter; /* Inicia un contador para los elementos li */
+    list-style-type: none; /* Remueve los estilos por defecto de la lista */
+    padding-left: 0; /* Remueve el padding por defecto */
+}
+
+.steps-to-success ol li {
+    counter-increment: step-counter; /* Incrementa el contador por cada li */
+    margin-bottom: 10px; /* Espacio entre pasos */
+    position: relative; /* Posicionamiento relativo para los números de los pasos */
+    padding-left: 30px; /* Espacio para el número del paso */
+}
+
+.steps-to-success ol li::before {
+    content: counter(step-counter); /* Inserta el número del paso */
+    position: absolute; /* Posicionamiento absoluto para sacarlo del flujo normal */
+    left: 0; /* Posición desde la izquierda */
+    top: 0; /* Posición desde arriba */
+    font-weight: bold; /* Texto en negrita */
+    color: #d32f2f; /* Color rojo para los números */
+}
+
+.body-anuncios .contact-info {
+    background: #f8f8f8; /* Fondo ligeramente diferente para resaltar la sección */
+    padding: 20px;
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 30px; /* Espacio antes de la sección de contacto */
+}
+
+.body-anuncios .contact-info h3 {
+    color: #003366; /* Color azul oscuro para el título de contacto */
+    font-size: 22px; /* Tamaño de fuente para el título de contacto */
+    margin-bottom: 15px; /* Espacio debajo del título de contacto */
+}
+
+.body-anuncios .contact-info p {
+    margin-bottom: 10px; /* Espacio entre elementos de contacto */
+}
+
+.body-anuncios a {
+    color: #1a0dab; /* Color azul para los enlaces, buena visibilidad */
+    text-decoration: none; /* Sin subrayado para mantener la limpieza */
+}
+
+.body-anuncios a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor para indicar interactividad */
+}

@@ -1,0 +1,39 @@
+POST http://localhost:8080/api/stripe/createPaymentIntent
+Content-Type: application/json
+Authorization: Bearer pk_test_51OD8MCEmQl5nvMENtESdkwAHj7v81nB9lCUCO6rZjK0A07dxzNgdyrSkDFT2Gaqa2nYwBEpedUIZcMXy8p6UxLKe005tzoyZjT
+
+{
+  "email": "customer@example.com",
+  "amount": 5000, 
+  "description": "Descripción del pago"
+}
+
+###
+GET http://localhost:8080/api/stripe/confirmedPayments
+Authorization: Bearer pk_test_51OD8MCEmQl5nvMENtESdkwAHj7v81nB9lCUCO6rZjK0A07dxzNgdyrSkDFT2Gaqa2nYwBEpedUIZcMXy8p6UxLKe005tzoyZjT
+
+
+###
+
+POST  http://localhost:8080/api/stripe/payment
+Content-Type: application/json
+Authorization: Bearer pk_test_51OD8MCEmQl5nvMENtESdkwAHj7v81nB9lCUCO6rZjK0A07dxzNgdyrSkDFT2Gaqa2nYwBEpedUIZcMXy8p6UxLKe005tzoyZjT
+
+{
+  "email": "test@example.com",
+  "cardNumber": "4242424242424242",
+  "expMonth": 12,
+  "expYear": 34,
+  "cvc": "567",
+  "name": "Zhang San",
+  "country": "US",
+  "postalCode": "12345",
+  "amount": 2000, 
+  "currency": "usd"
+}
+
+###
+GET http://localhost:8080/api/stripe/findPaymentIntentByEmail/ejemplo1@email.com
+Authorization: Bearer pk_test_51OD8MCEmQl5nvMENtESdkwAHj7v81nB9lCUCO6rZjK0A07dxzNgdyrSkDFT2Gaqa2nYwBEpedUIZcMXy8p6UxLKe005tzoyZjT
+
+

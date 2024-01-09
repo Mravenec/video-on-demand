@@ -1,0 +1,10 @@
+rmdir /s /q "C:\Users\betov\.m2\repository\com\tuprimernegocio"
+rmdir /s /q "C:\Users\betov\.m2\repository\org\tuprimernegocio"
+
+
+
+Solucion error XAMPP:
+del "C:\xampp\mysql\data\aria_log_control"
+
+Instalar el database:
+mvn install -DskipTests

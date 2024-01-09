@@ -1,0 +1,71 @@
+.body-contactenos {
+    padding: 30px; /* Espaciado más reducido */
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+    line-height: 1.4; /* Línea de altura ajustada para una lectura más cómoda */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px; /* Añade espacio entre los elementos del flex container */
+    max-width: 1200px; /* Puede limitar la anchura máxima del contenedor */
+    margin: auto; /* Centra el contenedor si tiene ancho máximo */
+}
+
+.contact-info, .contact-details {
+    width: calc(50% - 10px); /* Ajusta el ancho teniendo en cuenta el gap */
+    padding: 20px; /* Espaciado interno para cada sección */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para las tarjetas */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco para destacar sobre un posible fondo */
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-details {
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos de forma vertical */
+    justify-content: space-between; /* Distribuye el espacio verticalmente */
+}
+
+.contact-info iframe {
+    width: 100%;
+    height: 200px; /* Altura ajustada para hacer el mapa más pequeño */
+    border: 0;
+    border-radius: 5px; /* Bordes redondeados para el iframe */
+}
+
+.address {
+    margin-top: 15px;
+    font-weight: bold; /* Hace la dirección más prominente */
+}
+
+/* Estilos adicionales para los enlaces de correo electrónico y WhatsApp */
+.contact-details a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold; /* Hace que los enlaces sean más prominentes */
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes de respuesta */
+@media (max-width: 768px) {
+    .body-contactenos {
+        flex-direction: column; /* Los elementos se apilan verticalmente en pantallas pequeñas */
+    }
+
+    .contact-info, .contact-details {
+        width: 100%; /* Cada sección ocupa el 100% del ancho */
+        margin-bottom: 15px; /* Espacio debajo de cada sección */
+    }
+    
+    /* Se mantiene la altura del mapa en dispositivos móviles */
+    .contact-info iframe {
+        height: 200px;
+    }
+}
