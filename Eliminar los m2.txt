@@ -8,3 +8,9 @@ del "C:\xampp\mysql\data\aria_log_control"
 
 Instalar el database:
 mvn install -DskipTests
+
+Iniciar Backend:
+ & 'C:\Program Files\Java\jdk-20.0.2\bin\java.exe' '@C:\Users\betov\AppData\Local\Temp\cp_4c63x3o4ic7stg95nk22ilmi0.argfile' 'com.tuprimernegocio.library.database.DatabaseApplication'  
+
+Iniciar Frontend:
+npm start
