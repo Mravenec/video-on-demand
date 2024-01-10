@@ -18,7 +18,7 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/createPaymentIntent")
     public ResponseEntity<?> createPaymentIntent(@RequestBody PaymentRequest paymentRequest) {
         try {
@@ -29,7 +29,7 @@ public class PaymentController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/confirmedPayments")
     public ResponseEntity<?> getConfirmedPayments() {
         try {
@@ -40,7 +40,7 @@ public class PaymentController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/payment")
     public ResponseEntity<?> handlePayment(@RequestBody PaymentRequest paymentRequest) {
         try {
@@ -51,7 +51,7 @@ public class PaymentController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/findPaymentIntentByEmail/{email}")
     public ResponseEntity<?> findPaymentIntentByEmail(@PathVariable String email) {
         try {

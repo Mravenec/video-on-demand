@@ -217,9 +217,9 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<database.url>jdbc:mysql://localhost/</database.url>
+				<database.url>jdbc:mysql://tu1negocio.cxikgks2ghni.us-east-2.rds.amazonaws.com</database.url>
 				<database.username>root</database.username>
-				<database.password></database.password>
+				<database.password>Biz1stPass</database.password>
 			</properties>
 		</profile>
 	</profiles>

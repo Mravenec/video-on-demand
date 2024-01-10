@@ -18,7 +18,7 @@ public class VideoController {
     @Autowired
     private VideoService videoService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/createSection")
     public ResponseEntity<Map<String, Object>> createSection(@RequestHeader Map<String, String> headers,
             @RequestBody Sections section) {
@@ -26,7 +26,7 @@ public class VideoController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/getAllVideosGroupedBySections")
     public ResponseEntity<List<Map<String, Object>>> getAllVideosGroupedBySections(
             @RequestHeader Map<String, String> headers) {
@@ -34,7 +34,7 @@ public class VideoController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/insertVideo")
     public ResponseEntity<Map<String, Object>> insertVideo(
             @RequestHeader Map<String, String> headers,
@@ -51,7 +51,7 @@ public class VideoController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/updateSectionSequence")
     public ResponseEntity<String> updateSectionSequence(
             @RequestHeader Map<String, String> headers,
@@ -63,7 +63,7 @@ public class VideoController {
         return new ResponseEntity<>("Section sequence updated successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/updateVideoSequence")
     public ResponseEntity<String> updateVideoSequence(
             @RequestHeader Map<String, String> headers,
@@ -76,7 +76,7 @@ public class VideoController {
         return new ResponseEntity<>("Video sequence updated successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/updateSectionName")
     public ResponseEntity<String> updateSectionName(
             @RequestHeader Map<String, String> headers,
@@ -87,7 +87,7 @@ public class VideoController {
         return new ResponseEntity<>("Section name updated successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/updateVideoTitle")
     public ResponseEntity<String> updateVideoTitle(
             @RequestHeader Map<String, String> headers,
@@ -98,7 +98,7 @@ public class VideoController {
         return new ResponseEntity<>("Video title updated successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/deactivateVideo")
     public ResponseEntity<String> deactivateVideo(
             @RequestHeader Map<String, String> headers,
@@ -108,7 +108,7 @@ public class VideoController {
         return new ResponseEntity<>("Video deactivated successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/deactivateSection")
     public ResponseEntity<String> deactivateSection(
             @RequestHeader Map<String, String> headers,
@@ -118,7 +118,7 @@ public class VideoController {
         return new ResponseEntity<>("Section deactivated successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/updateVideoUrl/{videoId}")
     public ResponseEntity<String> updateVideoUrl(
             @RequestHeader Map<String, String> headers,
@@ -129,7 +129,7 @@ public class VideoController {
         return new ResponseEntity<>("Video URL updated successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/updateVideoDescription/{videoId}")
     public ResponseEntity<String> updateVideoDescription(
             @RequestHeader Map<String, String> headers,
@@ -140,7 +140,7 @@ public class VideoController {
         return new ResponseEntity<>("Video description updated successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/markVideoAsWatched/{userId}/{videoId}")
     public ResponseEntity<String> markVideoAsWatched(
             @RequestHeader Map<String, String> headers,
@@ -151,7 +151,7 @@ public class VideoController {
         return new ResponseEntity<>("Video marked as watched successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/unmarkVideoAsWatched/{userId}/{videoId}")
     public ResponseEntity<String> unmarkVideoAsWatched(
             @RequestHeader Map<String, String> headers,
@@ -162,7 +162,7 @@ public class VideoController {
         return new ResponseEntity<>("Video unmarked as watched successfully", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/getAllVideosBySectionsAndUser/{userId}")
     public ResponseEntity<List<Map<String, Object>>> getAllVideosBySectionsAndUser(
             @RequestHeader Map<String, String> headers,

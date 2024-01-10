@@ -27,7 +27,7 @@ public class UserController {
      * @param payload A map containing the user's email, password, and full name.
      * @return HTTP response status.
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody Map<String, Object> payload) {
         return userService.registerUser(payload);
@@ -40,25 +40,25 @@ public class UserController {
      * @return The result of the validation, containing user details if successful,
      *         or an error message otherwise.
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/login")
     public ResponseEntity<Object> loginUser(@RequestBody Map<String, String> payload) {
         return userService.loginUser(payload);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/validateToken")
     public ResponseEntity<Object> validateToken(@RequestHeader("Authorization") String authHeader) {
         return userService.validateToken(authHeader);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/userInfo")
     public ResponseEntity<Object> getUserInfo(@RequestHeader("Authorization") String authHeader) {
         return userService.getUserInfo(authHeader);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/findAllUsersByAdmin/{adminId}")
     public ResponseEntity<List<ValidateUserResult>> findAllUsersByAdmin(
             @RequestHeader("Authorization") String authHeader,
@@ -66,7 +66,7 @@ public class UserController {
         return userService.findAllUsersByAdmin(authHeader, adminId);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/updatePhones")
     public ResponseEntity<?> updatePhones(@RequestHeader Map<String, String> headers,
             @RequestBody Map<String, Object> payload) {
@@ -77,7 +77,7 @@ public class UserController {
         return ResponseEntity.ok().body("Phones updated successfully");
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/selectPhones/{userId}")
     public ResponseEntity<?> selectPhones(@RequestHeader Map<String, String> headers,
             @PathVariable Integer userId) {
@@ -90,7 +90,7 @@ public class UserController {
     }
 
     // Reset Password:
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/forgotPassword")
     public ResponseEntity<?> forgotPassword(@RequestBody Map<String, String> payload) {
         try {
@@ -102,7 +102,7 @@ public class UserController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/resetPassword")
     public ResponseEntity<?> resetPassword(@RequestBody Map<String, String> payload) {
         try {
@@ -116,7 +116,7 @@ public class UserController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/selectAddress/{userId}")
     public ResponseEntity<?> selectAddress(@RequestHeader Map<String, String> headers,
             @PathVariable Integer userId) {
@@ -134,7 +134,7 @@ public class UserController {
         return ResponseEntity.ok().body(addressMap);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/updateAddress")
     public ResponseEntity<?> updateAddress(@RequestHeader Map<String, String> headers,
             @RequestBody Map<String, Object> payload) {
@@ -148,7 +148,7 @@ public class UserController {
         return ResponseEntity.ok().body("Address updated successfully");
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @DeleteMapping("/deleteAddress/{userId}")
     public ResponseEntity<?> deleteAddress(@RequestHeader Map<String, String> headers,
             @PathVariable Integer userId) {
@@ -156,7 +156,7 @@ public class UserController {
         return ResponseEntity.ok().body("Address deleted successfully");
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/updateUserProfilePicture")
     public ResponseEntity<?> updateUserProfilePicture(
             @RequestHeader Map<String, String> headers,
@@ -169,7 +169,7 @@ public class UserController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/getUserProfilePicture/{userId}")
     public ResponseEntity<?> getUserProfilePicture(@RequestHeader Map<String, String> headers,
             @PathVariable Integer userId) {

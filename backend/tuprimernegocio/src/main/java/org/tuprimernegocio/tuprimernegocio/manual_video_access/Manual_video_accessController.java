@@ -15,7 +15,7 @@ public class Manual_video_accessController {
     @Autowired
     private Manual_video_accessService manualVideoAccessService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @GetMapping("/active-users/{adminId}")
     public ResponseEntity<List<Manual_video_accessRepository.ValidateVideoAccessResult>> getActiveVideoAccessUsers(
             @RequestHeader Map<String, String> headers,
@@ -23,7 +23,7 @@ public class Manual_video_accessController {
         return manualVideoAccessService.getActiveVideoAccessUsers(headers, adminId);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PostMapping("/insert-video-access")
     public ResponseEntity<Map<String, Object>> insertVideoAccess(
             @RequestHeader Map<String, String> headers,
@@ -32,7 +32,7 @@ public class Manual_video_accessController {
         return manualVideoAccessService.insertVideoAccess(headers, videoAccess);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/update-video-access-email")
     public ResponseEntity<Map<String, Object>> updateVideoAccessEmail(
             @RequestHeader Map<String, String> headers,
@@ -46,7 +46,7 @@ public class Manual_video_accessController {
         return manualVideoAccessService.updateVideoAccessEmail(headers, accessId, newEmail, adminId);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://tuprimernegocio.org")
     @PutMapping("/deactivate-video-access")
     public ResponseEntity<Map<String, Object>> deactivateVideoAccess(
             @RequestHeader Map<String, String> headers,
