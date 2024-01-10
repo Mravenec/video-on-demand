@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const BASE_URL = 'http://ec2-3-128-188-82.us-east-2.compute.amazonaws.com:8080';
+
 // Función para configurar el token en los encabezados de Axios
 const setAuthToken = (token) => {
   if (token) {
@@ -12,7 +14,7 @@ const setAuthToken = (token) => {
 // Acción asincrónica para iniciar sesión
 export const login = (userData) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:8080/login', userData);
+    const response = await axios.post(`${BASE_URL}/login`, userData);
     const token = response.data.jwtToken;
 
     if (!token) {
@@ -46,7 +48,7 @@ export const initializeAuth = () => async (dispatch) => {
     setAuthToken(token);
 
     try {
-      const response = await axios.get('http://localhost:8080/userInfo');
+      const response = await axios.get(`${BASE_URL}/userInfo`);
       dispatch({
         type: 'INITIALIZE_AUTH',
         payload: { token, user: response.data },
@@ -85,7 +87,7 @@ export const registerSuccess = () => ({
 // Acción asincrónica para registrarse
 export const register = (userData) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:8080/register', userData);
+    const response = await axios.post(`${BASE_URL}/register`, userData);
     const token = response.data.jwtToken;
 
     if (token) {
@@ -105,7 +107,7 @@ export const register = (userData) => async (dispatch) => {
 // Acción asincrónica para "Olvidé mi contraseña"
 export const forgotPassword = (email) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:8080/forgotPassword', { email });
+    const response = await axios.post(`${BASE_URL}/forgotPassword`, { email });
     dispatch({
       type: 'FORGOT_PASSWORD_SUCCESS',
       payload: response.data,
@@ -120,7 +122,7 @@ export const forgotPassword = (email) => async (dispatch) => {
 
 export const resetPassword = (token, newPassword) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:8080/resetPassword', {
+    const response = await axios.post(`${BASE_URL}/resetPassword`, {
       token,
       newPassword
     });
@@ -144,7 +146,7 @@ export const findAllUsersByAdmin = () => async (dispatch) => {
     }
 
     // Obtener el adminId (userId en este caso)
-    const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+    const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const adminId = userInfoResponse.data.userId;
@@ -153,7 +155,7 @@ export const findAllUsersByAdmin = () => async (dispatch) => {
       throw new Error('ID de usuario no disponible');
     }
 
-    const response = await axios.get(`http://localhost:8080/findAllUsersByAdmin/${adminId}`, {
+    const response = await axios.get(`${BASE_URL}/findAllUsersByAdmin/${adminId}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     dispatch({
@@ -178,7 +180,7 @@ export const validateToken = () => async (dispatch) => {
       throw new Error('Token no disponible');
     }
 
-    const response = await axios.get('http://localhost:8080/validateToken', {
+    const response = await axios.get(`${BASE_URL}/validateToken`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -204,7 +206,7 @@ export const updatePhones = (phoneData) => async (dispatch) => {
     }
 
     // Obtener el userId
-    const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+    const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const userId = userInfoResponse.data.userId;
@@ -216,7 +218,7 @@ export const updatePhones = (phoneData) => async (dispatch) => {
     // Agregar userId a phoneData
     phoneData.userId = userId;
 
-    const apiUrl = 'http://localhost:8080/updatePhones';
+    const apiUrl = `${BASE_URL}/updatePhones`;
     const headers = {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
@@ -243,7 +245,7 @@ export const selectPhones = () => async (dispatch) => {
       throw new Error('Token no disponible');
     }
 
-    const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+    const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const userId = userInfoResponse.data.userId;
@@ -252,7 +254,7 @@ export const selectPhones = () => async (dispatch) => {
       throw new Error('ID de usuario no disponible');
     }
 
-    const apiUrl = `http://localhost:8080/selectPhones/${userId}`;
+    const apiUrl = `${BASE_URL}/selectPhones/${userId}`;
     const headers = {
       Authorization: `Bearer ${token}`,
     };
@@ -278,7 +280,7 @@ export const selectAddress = () => async (dispatch) => {
       throw new Error('Token no disponible');
     }
 
-    const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+    const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const userId = userInfoResponse.data.userId;
@@ -287,7 +289,7 @@ export const selectAddress = () => async (dispatch) => {
       throw new Error('ID de usuario no disponible');
     }
 
-    const apiUrl = `http://localhost:8080/selectAddress/${userId}`;
+    const apiUrl = `${BASE_URL}/selectAddress/${userId}`;
     const headers = {
       Authorization: `Bearer ${token}`,
     };
@@ -313,7 +315,7 @@ export const updateAddress = (addressData) => async (dispatch) => {
       throw new Error('Token no disponible');
     }
 
-    const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+    const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const userId = userInfoResponse.data.userId;
@@ -324,7 +326,7 @@ export const updateAddress = (addressData) => async (dispatch) => {
 
     addressData.userId = userId;
 
-    const apiUrl = 'http://localhost:8080/updateAddress';
+    const apiUrl = `${BASE_URL}/updateAddress`;
     const headers = {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
@@ -351,7 +353,7 @@ export const deleteAddress = () => async (dispatch) => {
       throw new Error('Token no disponible');
     }
 
-    const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+    const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const userId = userInfoResponse.data.userId;
@@ -360,7 +362,7 @@ export const deleteAddress = () => async (dispatch) => {
       throw new Error('ID de usuario no disponible');
     }
 
-    const apiUrl = `http://localhost:8080/deleteAddress/${userId}`;
+    const apiUrl = `${BASE_URL}/deleteAddress/${userId}`;
     const headers = {
       Authorization: `Bearer ${token}`,
     };
@@ -383,7 +385,7 @@ export const updateUserProfilePicture = (imageFile) => async (dispatch) => {
     const token = localStorage.getItem('jwtToken');
     if (!token) throw new Error('Token no disponible');
 
-    const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+    const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const userId = userInfoResponse.data.userId;
@@ -395,7 +397,7 @@ export const updateUserProfilePicture = (imageFile) => async (dispatch) => {
     formData.append('userId', userId);
     formData.append('profilePicture', imageFile);
 
-    const apiUrl = 'http://localhost:8080/updateUserProfilePicture';
+    const apiUrl = `${BASE_URL}/updateUserProfilePicture`;
     const headers = { Authorization: `Bearer ${token}` };
 
     const response = await axios.put(apiUrl, formData, { headers });
@@ -421,7 +423,7 @@ export const getUserProfilePicture = () => async (dispatch) => {
       throw new Error('Token no disponible');
     }
 
-    const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+    const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const userId = userInfoResponse.data.userId;
@@ -430,7 +432,7 @@ export const getUserProfilePicture = () => async (dispatch) => {
       throw new Error('ID de usuario no disponible');
     }
 
-    const apiUrl = `http://localhost:8080/getUserProfilePicture/${userId}`;
+    const apiUrl = `${BASE_URL}/getUserProfilePicture/${userId}`;
     const headers = {
       Authorization: `Bearer ${token}`,
     };
@@ -454,7 +456,7 @@ export const getUserProfilePicture = () => async (dispatch) => {
 // Acción asincrónica para obtener el Payment Intent por email
 export const findPaymentIntentByEmail = (email) => async (dispatch) => {
   try {
-    const response = await axios.get(`http://localhost:8080/api/stripe/findPaymentIntentByEmail/${email}`, {
+    const response = await axios.get(`${BASE_URL}/api/stripe/findPaymentIntentByEmail/${email}`, {
       headers: {
         Authorization: 'Bearer pk_test_51OD8MCEmQl5nvMENtESdkwAHj7v81nB9lCUCO6rZjK0A07dxzNgdyrSkDFT2Gaqa2nYwBEpedUIZcMXy8p6UxLKe005tzoyZjT'
       }
@@ -495,7 +497,7 @@ export const fetchVideos = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:8080/dashboard/videos/getAllVideosGroupedBySections', {
+      const response = await axios.get(`${BASE_URL}/dashboard/videos/getAllVideosGroupedBySections`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -532,7 +534,7 @@ export const createNewSection = (newSectionName) => {
       }
 
       // Intenta obtener el ID del usuario usando la API
-      const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+      const userInfoResponse = await axios.get(`${BASE_URL}/:8080/userInfo`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -544,7 +546,7 @@ export const createNewSection = (newSectionName) => {
         throw new Error('ID de usuario no disponible');
       }
 
-      const apiUrl = 'http://localhost:8080/dashboard/videos/createSection';
+      const apiUrl = `${BASE_URL}/dashboard/videos/createSection`;
       const sectionData = {
         name: newSectionName,
         addedBy: userId,
@@ -581,7 +583,7 @@ export const insertVideo = (videoData) => {
       }
 
       // Intenta obtener el ID del usuario usando la API
-      const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+      const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -598,7 +600,7 @@ export const insertVideo = (videoData) => {
       console.log('videoData:', videoData);
 
       // Llamada al endpoint /dashboard/videos/insertVideo
-      const response = await axios.post('http://localhost:8080/dashboard/videos/insertVideo', videoData, {
+      const response = await axios.post(`${BASE_URL}/dashboard/videos/insertVideo`, videoData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -632,7 +634,7 @@ export const updateSectionSequence = (sectionId, newSequence) => {
       }
 
       // Obtener el ID del usuario usando la API
-      const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+      const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -642,7 +644,7 @@ export const updateSectionSequence = (sectionId, newSequence) => {
         throw new Error('ID de usuario no disponible');
       }
 
-      const apiUrl = `http://localhost:8080/dashboard/videos/updateSectionSequence`;
+      const apiUrl = `${BASE_URL}/dashboard/videos/updateSectionSequence`;
       const data = {
         section_id: sectionId,
         new_sequence_number: newSequence,
@@ -675,7 +677,7 @@ export const updateVideoSequence = (sectionId, videoId, newSequence) => {
       }
 
       // Obtener el ID del usuario usando la API
-      const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+      const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -685,7 +687,7 @@ export const updateVideoSequence = (sectionId, videoId, newSequence) => {
         throw new Error('ID de usuario no disponible');
       }
 
-      const apiUrl = `http://localhost:8080/dashboard/videos/updateVideoSequence`;
+      const apiUrl = `${BASE_URL}/dashboard/videos/updateVideoSequence`;
       const data = {
         section_id: sectionId,
         video_id: videoId,
@@ -718,7 +720,7 @@ export const updateSectionName = (sectionId, newSectionName) => {
         throw new Error('Token no disponible');
       }
 
-      const apiUrl = 'http://localhost:8080/dashboard/videos/updateSectionName';
+      const apiUrl = `${BASE_URL}/dashboard/videos/updateSectionName`;
       const data = {
         section_id: sectionId,
         new_name: newSectionName,
@@ -756,7 +758,7 @@ export const updateVideoTitle = (videoId, newTitle) => {
         throw new Error('Token no disponible');
       }
 
-      const apiUrl = 'http://localhost:8080/dashboard/videos/updateVideoTitle';
+      const apiUrl = `${BASE_URL}/dashboard/videos/updateVideoTitle`;
       const data = {
         video_id: videoId,
         new_title: newTitle,
@@ -795,7 +797,7 @@ export const deactivateVideo = (videoId) => {
         throw new Error('Token no disponible');
       }
 
-      const apiUrl = 'http://localhost:8080/dashboard/videos/deactivateVideo';
+      const apiUrl = `${BASE_URL}/dashboard/videos/deactivateVideo`;
       const requestData = {
         video_id: videoId,
       };
@@ -833,7 +835,7 @@ export const deactivateSection = (sectionId) => {
         throw new Error('Token no disponible');
       }
 
-      const apiUrl = 'http://localhost:8080/dashboard/videos/deactivateSection';
+      const apiUrl = `${BASE_URL}/dashboard/videos/deactivateSection`;
       const requestData = {
         section_id: sectionId,
       };
@@ -873,7 +875,7 @@ export const updateVideoUrl = (videoId, newUrl) => {
       }
 
       // Configurar la URL y el cuerpo de la solicitud
-      const apiUrl = `http://localhost:8080/dashboard/videos/updateVideoUrl/${videoId}`;
+      const apiUrl = `${BASE_URL}/dashboard/videos/updateVideoUrl/${videoId}`;
       const requestData = {
         newUrl: newUrl,
       };
@@ -916,7 +918,7 @@ export const updateVideoDescription = (videoId, newDescription) => {
         throw new Error('Token no disponible');
       }
 
-      const apiUrl = `http://localhost:8080/dashboard/videos/updateVideoDescription/${videoId}`;
+      const apiUrl = `${BASE_URL}/dashboard/videos/updateVideoDescription/${videoId}`;
       const data = {
         newDescription: newDescription,
       };
@@ -961,7 +963,7 @@ export const markVideoAsWatched = (videoId) => {
       }
 
       // Llamada a la API para obtener userId
-      const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+      const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const userId = userInfoResponse.data.userId;
@@ -977,7 +979,7 @@ export const markVideoAsWatched = (videoId) => {
       console.log(`userId: ${userId}, videoId: ${videoId}`);
 
 
-      const apiUrl = `http://localhost:8080/dashboard/videos/markVideoAsWatched/${userId}/${videoId}`;
+      const apiUrl = `${BASE_URL}/dashboard/videos/markVideoAsWatched/${userId}/${videoId}`;
       const headers = {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -1018,7 +1020,7 @@ export const unmarkVideoAsWatched = (videoId) => {
       }
 
       // Llamada a la API para obtener userId
-      const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+      const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const userId = userInfoResponse.data.userId;
@@ -1034,7 +1036,7 @@ export const unmarkVideoAsWatched = (videoId) => {
       console.log(`userId: ${userId}, videoId: ${videoId}`);
 
 
-      const apiUrl = `http://localhost:8080/dashboard/videos/unmarkVideoAsWatched/${userId}/${videoId}`;
+      const apiUrl = `${BASE_URL}/dashboard/videos/unmarkVideoAsWatched/${userId}/${videoId}`;
       const headers = {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -1073,7 +1075,7 @@ export const fetchVideosByUser = () => {
       }
 
       // Llamada a la API para obtener userId
-      const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+      const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const userId = userInfoResponse.data.userId;
@@ -1086,7 +1088,7 @@ export const fetchVideosByUser = () => {
         return;
       }
 
-      const response = await axios.get(`http://localhost:8080/dashboard/videos/getAllVideosBySectionsAndUser/${userId}`, {
+      const response = await axios.get(`${BASE_URL}/dashboard/videos/getAllVideosBySectionsAndUser/${userId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+const BASE_URL = 'http://ec2-3-128-188-82.us-east-2.compute.amazonaws.com:8080';
+
+
 // Función para obtener el token
 const getToken = () => {
   const token = localStorage.getItem('jwtToken');
@@ -10,7 +13,7 @@ const getToken = () => {
 // Función para obtener el adminId
 const getAdminId = async () => {
   const token = getToken();
-  const userInfoResponse = await axios.get('http://localhost:8080/userInfo', {
+  const userInfoResponse = await axios.get(`${BASE_URL}/userInfo`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   const adminId = userInfoResponse.data.userId;
@@ -24,7 +27,7 @@ export const getActiveVideoAccessUsers = () => async (dispatch) => {
     const token = getToken();
     const adminId = await getAdminId();
 
-    const response = await axios.get(`http://localhost:8080/manual-video-access/active-users/${adminId}`, {
+    const response = await axios.get(`${BASE_URL}/manual-video-access/active-users/${adminId}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -47,7 +50,7 @@ export const insertVideoAccess = (videoAccessData) => async (dispatch) => {
     const adminId = await getAdminId();
     videoAccessData.adminId = adminId;
 
-    const response = await axios.post('http://localhost:8080/manual-video-access/insert-video-access', videoAccessData, {
+    const response = await axios.post(`${BASE_URL}/manual-video-access/insert-video-access`, videoAccessData, {
       headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     });
 
@@ -70,7 +73,7 @@ export const updateVideoAccessEmail = (requestData) => async (dispatch) => {
     const adminId = await getAdminId();
     requestData.adminId = adminId;
 
-    const response = await axios.put('http://localhost:8080/manual-video-access/update-video-access-email', requestData, {
+    const response = await axios.put(`${BASE_URL}/manual-video-access/update-video-access-email`, requestData, {
       headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     });
 
@@ -93,7 +96,7 @@ export const deactivateVideoAccess = (requestData) => async (dispatch) => {
     const adminId = await getAdminId();
     requestData.adminId = adminId;
 
-    const response = await axios.put('http://localhost:8080/manual-video-access/deactivate-video-access', requestData, {
+    const response = await axios.put(`${BASE_URL}/manual-video-access/deactivate-video-access`, requestData, {
       headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     });
 
