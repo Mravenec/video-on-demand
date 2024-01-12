@@ -40,7 +40,7 @@ public class UserController {
      * @return The result of the validation, containing user details if successful,
      *         or an error message otherwise.
      */
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org/:8080")
     @PostMapping("/login")
     public ResponseEntity<Object> loginUser(@RequestBody Map<String, String> payload) {
         return userService.loginUser(payload);
