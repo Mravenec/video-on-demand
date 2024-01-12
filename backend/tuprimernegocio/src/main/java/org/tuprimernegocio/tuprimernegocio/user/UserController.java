@@ -46,19 +46,19 @@ public class UserController {
         return userService.loginUser(payload);
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @GetMapping("/validateToken")
     public ResponseEntity<Object> validateToken(@RequestHeader("Authorization") String authHeader) {
         return userService.validateToken(authHeader);
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @GetMapping("/userInfo")
     public ResponseEntity<Object> getUserInfo(@RequestHeader("Authorization") String authHeader) {
         return userService.getUserInfo(authHeader);
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @GetMapping("/findAllUsersByAdmin/{adminId}")
     public ResponseEntity<List<ValidateUserResult>> findAllUsersByAdmin(
             @RequestHeader("Authorization") String authHeader,
