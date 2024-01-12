@@ -27,7 +27,7 @@ public class UserController {
      * @param payload A map containing the user's email, password, and full name.
      * @return HTTP response status.
      */
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody Map<String, Object> payload) {
         return userService.registerUser(payload);
@@ -66,7 +66,7 @@ public class UserController {
         return userService.findAllUsersByAdmin(authHeader, adminId);
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @PostMapping("/updatePhones")
     public ResponseEntity<?> updatePhones(@RequestHeader Map<String, String> headers,
             @RequestBody Map<String, Object> payload) {
@@ -77,7 +77,7 @@ public class UserController {
         return ResponseEntity.ok().body("Phones updated successfully");
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @GetMapping("/selectPhones/{userId}")
     public ResponseEntity<?> selectPhones(@RequestHeader Map<String, String> headers,
             @PathVariable Integer userId) {
@@ -90,7 +90,7 @@ public class UserController {
     }
 
     // Reset Password:
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @PostMapping("/forgotPassword")
     public ResponseEntity<?> forgotPassword(@RequestBody Map<String, String> payload) {
         try {
@@ -102,7 +102,7 @@ public class UserController {
         }
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @PostMapping("/resetPassword")
     public ResponseEntity<?> resetPassword(@RequestBody Map<String, String> payload) {
         try {
@@ -116,7 +116,7 @@ public class UserController {
         }
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @GetMapping("/selectAddress/{userId}")
     public ResponseEntity<?> selectAddress(@RequestHeader Map<String, String> headers,
             @PathVariable Integer userId) {
@@ -134,7 +134,7 @@ public class UserController {
         return ResponseEntity.ok().body(addressMap);
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @PostMapping("/updateAddress")
     public ResponseEntity<?> updateAddress(@RequestHeader Map<String, String> headers,
             @RequestBody Map<String, Object> payload) {
@@ -148,7 +148,7 @@ public class UserController {
         return ResponseEntity.ok().body("Address updated successfully");
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @DeleteMapping("/deleteAddress/{userId}")
     public ResponseEntity<?> deleteAddress(@RequestHeader Map<String, String> headers,
             @PathVariable Integer userId) {
@@ -156,7 +156,7 @@ public class UserController {
         return ResponseEntity.ok().body("Address deleted successfully");
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @PutMapping("/updateUserProfilePicture")
     public ResponseEntity<?> updateUserProfilePicture(
             @RequestHeader Map<String, String> headers,
@@ -169,7 +169,7 @@ public class UserController {
         }
     }
 
-    @CrossOrigin(origins = "https://tuprimernegocio.org")
+    @CrossOrigin(origins = "https://s1.tuprimernegocio.org:8080")
     @GetMapping("/getUserProfilePicture/{userId}")
     public ResponseEntity<?> getUserProfilePicture(@RequestHeader Map<String, String> headers,
             @PathVariable Integer userId) {

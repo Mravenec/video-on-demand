@@ -10,7 +10,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins("https://s1.tuprimernegocio.org")
+            .allowedOrigins("https://s1.tuprimernegocio.org:8080")
             .allowedMethods("*") // Permite todos los métodos
             .allowedHeaders("*") // Permite todas las cabeceras
             .allowCredentials(true)
