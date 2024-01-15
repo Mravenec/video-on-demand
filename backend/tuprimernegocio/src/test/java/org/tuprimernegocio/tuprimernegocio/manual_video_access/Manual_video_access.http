@@ -1,5 +1,5 @@
 GET http://localhost:8080/manual-video-access/active-users/3
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDQzMjAyNDIsImlhdCI6MTcwNDI4NDI0Mn0.77fWqmeZYOOv5GmL_fVGSnJIRhpxq0GRpY7mE5FPAhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlamVtcGxvMUBlbWFpbC5jb20iLCJleHAiOjE3MDUwNjUzMDUsImlhdCI6MTcwNTAyOTMwNX0.KdxpNA1diqnz3Ik6DmvPT3IUzcswFxCyWuevtDUL770
 
 ###
 

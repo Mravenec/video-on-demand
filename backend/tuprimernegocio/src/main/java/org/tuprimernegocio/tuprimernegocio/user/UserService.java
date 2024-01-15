@@ -500,7 +500,7 @@ public class UserService {
     }
 
     private void sendPasswordResetEmail(String to, String token) {
-        String resetLink = "https://tuprimernegocio.org/reset-password?token=" + token;
+        String resetLink = "http://localhost:3000/reset-password?token=" + token;
         String subject = "Restablecimiento de Contraseña";
         String text = "Por favor, haz clic en el siguiente enlace para restablecer tu contraseña:\n\n" + resetLink;
 
