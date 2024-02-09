@@ -1,7 +1,5 @@
 .dashboard-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
   width: 100%;
 }
 
@@ -38,12 +36,16 @@
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: flex-end;
+    display: none;
   }
 
   .view-selector,
   .logout-button {
     margin-top: 5px;
+    align-items: flex-end;
+  }
+
+  .h1-container {
+display: none;
   }
 }

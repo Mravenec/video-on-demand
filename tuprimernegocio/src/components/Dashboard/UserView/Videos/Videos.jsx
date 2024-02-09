@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { fetchVideosByUser, markVideoAsWatched, unmarkVideoAsWatched } from '../../../../store/actions/authActions';
 import ReactPlayer from 'react-player';
 import '../Videos/Videos.css';
@@ -10,6 +11,8 @@ const Videos = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [watchedVideos, setWatchedVideos] = useState({});
   const [accordionState, setAccordionState] = useState({});
+  
+
 
   useEffect(() => {
     dispatch(fetchVideosByUser());
@@ -22,6 +25,8 @@ const Videos = () => {
       videosData.forEach(section => {
         section.videos.forEach(video => {
           console.log("Video in Data:", video);
+          console.log('URL de la imagen:', video.url);
+
         });
       });
     }
@@ -118,23 +123,25 @@ const Videos = () => {
     }));
   };
 
+ 
+
+
   return (
     <div className="videos-container">
       <div className="main-content">
         {selectedVideo ? (
           <>
             <div className="video-header">
-              <h3>{selectedVideo.title}</h3>
+              <h3 className="titulo">{selectedVideo.title}</h3>
             </div>
             <ReactPlayer
               url={selectedVideo.url}
               controls
-              width="145vh"
-              height="65vh"
+              
+              className= "react-player"
               onEnded={advanceToNextVideo}
             />
-            <div className="video-content">
-              <p>{selectedVideo.content}</p>
+            <div className="watched">
               {!watchedVideos[selectedVideo.id] ? (
                 <div className="mark-as-watched">
                   <button onClick={() => markAsWatched(selectedVideo.id)}>
@@ -148,14 +155,21 @@ const Videos = () => {
                   </button>
                 </div>
               )}
+          </div>
+            <div className="video-content">
+          
+              <p >{selectedVideo.content}</p>
+          
 
             </div>
           </>
         ) : (
           <p>No hay un video seleccionado</p>
         )}
+
       </div>
-      <div className="SideBarVideos">
+      
+<div className="SideBarVideos">
         {videosData && videosData.length > 0 ? (
           videosData.map((section) => (
             <div key={section.section_id}>
@@ -174,8 +188,12 @@ const Videos = () => {
                     className="video-item"
                   >
                     <div className="sequence-box">{video.sequence_number}</div>
-                    <div className="video-thumbnail" style={{ backgroundImage: `url(${video.url})` }}>
-                    </div>
+           
+                    
+                 
+  
+          
+                    
                     <span>{video.title}</span>
                     {watchedVideos[video.id] && <div className="watched-check checked">✔</div>}
                   </div>

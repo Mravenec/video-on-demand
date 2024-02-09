@@ -22,21 +22,26 @@
   display: flex;
   justify-content: flex-end;
   transition: opacity 1s;  /* Transición suave de la opacidad */
-}
-
-.image-content.fading {
-  opacity: 0;  /* Cambio de opacidad para "fade out" */
+  
 }
 
 .image-content img {
-  max-width: 400px;
+  max-width: 60%;
   height: auto;
   margin-right: 20%;
+  border-radius: 10pt;
+
 }
+/* Media query para dispositivos móviles */
 
 @media (max-width: 768px) {
   .body-quienes-somos {
     flex-direction: column;
+  }
+
+  /* Para mostrar primero la imagen */
+  .image-content {
+  order: -1; 
   }
 
   .text-content, .image-content {
@@ -44,9 +49,8 @@
     margin: 0;
   }
 
-  .image-content img {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 400px;
+    .image-content img {
+      max-width: 100%; /* La imagen se ajusta al 100% del ancho del contenedor */
+      margin-right: 0; /* Eliminar el margen derecho en dispositivos más pequeños */
+    }
   }
-}

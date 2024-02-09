@@ -217,6 +217,8 @@ const Videos = () => {
               controls
               width="145vh"
               height="65vh"
+              className= "react-player"
+
               onEnded={() => markAsWatched(selectedVideo.id)}
             />
             <div className="video-content">
