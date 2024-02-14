@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
+
 import './BodyQuienesSomos.css';
 
 function BodyQuienesSomos() {
-  const [image, setImage] = useState('around.jpeg');
-  const [isFading, setIsFading] = useState(false);
+  //const [image, setImage] = useState('Fotot1n.jpeg');
+//  const [isFading, setIsFading] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsFading(true);
+ // useEffect(() => {
+   // const timer = setTimeout(() => {
+    //  setIsFading(true);
 
-      setTimeout(() => {
-        setImage(image === 'around.jpeg' ? 'front.jpeg' : 'around.jpeg');
-        setIsFading(false);
-      }, 200); // Esto permite un segundo para la transición de opacidad
-    }, 3600);
+     // setTimeout(() => {
+       // setImage(image === 'around.jpeg' ? 'front.jpeg' : 'around.jpeg');
+        //setIsFading(false);
+      //}, 200); // Esto permite un segundo para la transición de opacidad
+    //}, 3600);
 
-    return () => clearTimeout(timer);
-  }, [image]);
+    //return () => clearTimeout(timer);
+ // }, [image]);
 
   return (
     <div className="body-quienes-somos">
@@ -32,8 +32,8 @@ function BodyQuienesSomos() {
           ¡apresurate, ven y aprende con nosotros!
         </p>
       </div>
-      <div className={`image-content ${isFading ? 'fading' : ''}`}>
-        <img src={`./pages/QuienesSomosPictures/${image}`} alt="Quienes Somos" />
+      <div className={`image-content`}>
+        <img src={`./pages/QuienesSomosPictures/Fotot1n.jpeg`} alt="Quienes Somos" />
       </div>
     </div>
   );

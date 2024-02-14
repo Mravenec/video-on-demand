@@ -15,7 +15,7 @@
     width: calc(50% - 10px); /* Ajusta el ancho teniendo en cuenta el gap */
     padding: 20px; /* Espaciado interno para cada sección */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para las tarjetas */
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 10px; /* Bordes redondeados */
     background-color: #ffffff; /* Fondo blanco para destacar sobre un posible fondo */
 }
 
@@ -53,6 +53,12 @@
     text-decoration: underline;
 }
 
+
+h2{
+    text-align: center;
+
+}
+
 /* Ajustes de respuesta */
 @media (max-width: 768px) {
     .body-contactenos {
@@ -68,4 +74,5 @@
     .contact-info iframe {
         height: 200px;
     }
+
 }

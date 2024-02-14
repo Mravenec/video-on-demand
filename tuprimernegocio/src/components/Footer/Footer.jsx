@@ -4,7 +4,7 @@ import './Footer.css';
 function FooterAnuncios() {
   return (
     <footer className="footer-anuncios">
-      © 2023, Tu Primer Negocio. Todos los derechos reservados.
+      © 2024, Tu Primer Negocio. Todos los derechos reservados.
     </footer>
   );
 }
