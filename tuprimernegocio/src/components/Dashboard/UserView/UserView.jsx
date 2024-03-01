@@ -102,7 +102,7 @@ const UserView = () => {
       case 'profile':
         return (
           <div className="user-info">
-            <h2>Esta es la vista de Usuario</h2>
+            <h2>Tus datos personales</h2>
             <p>Bienvenido, {fullName}</p>
             <div className="forms-container">
               <form onSubmit={handleSubmit(onSubmitProfile)} className="form-profile" encType="multipart/form-data">

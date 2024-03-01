@@ -1,0 +1,128 @@
+
+.body-anuncios {
+    padding: 20px;
+    background: rgba(224, 121, 47, 0.466);    
+    border: 1px solid rgb(224, 122, 47); /* Borde sutil */
+    border-radius: 30px; /* Bordes redondeados para un aspecto moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 80%; /* Ancho máximo para mantener la legibilidad */
+    margin: 40px auto; /* Centrado con margen vertical */
+    text-align: left; /* Alineación del texto a la izquierda para facilitar la lectura */
+    margin-bottom: 60px;
+    height: 100%;
+
+    
+}
+
+.body-anuncios h2 {
+    
+    color: #eeeeee; /* Color azul oscuro para el título de sección */
+    font-size: 28px; /* Tamaño del texto grande para el título */
+    margin-bottom: 20px; /* Espacio después del título */
+}
+
+.body-anuncios p {
+    color: #ffffff; /* Color gris oscuro para el texto */
+    font-size: 16px; /* Tamaño del texto para una lectura cómoda */
+    line-height: 1.6; /* Espacio entre líneas para mejorar la legibilidad */
+    margin-bottom: 20px; /* Espacio entre párrafos */
+}
+
+.body-anuncios strong {
+    color: #d3792f; /* Utilizar el mismo color rojo para elementos destacados */
+}
+
+.steps-to-success {
+    margin-top: 30px;
+    background: rgb(143, 59, 27, 0.80); /* Fondo ligeramente gris para la sección de pasos */
+    border: 3px solid #915c31;
+
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 30px; /* Bordes redondeados */
+}
+
+.steps-to-success h3 {
+    color:rgb(71, 25, 7);
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.steps-to-success ol {
+    counter-reset: step-counter;
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.steps-to-success ol li {
+    counter-increment: step-counter; 
+    margin-bottom: 10px; 
+    position: relative; 
+    padding-left: 30px;
+}
+
+.steps-to-success ol li::before {
+    content: counter(step-counter);
+    position: absolute; 
+    left: 0;
+    top: 0; 
+    font-weight: bold; 
+    color: rgb(71, 25, 7);
+}
+
+.body-anuncios .contact-info {
+    
+    background: rgba(248, 248, 248, 0.741); /* Fondo ligeramente diferente para resaltar la sección */
+    padding: 20px;
+    width: 80%;
+    border: 4px solid #974400;
+    border-radius: 30px; /* Bordes redondeados */
+    margin-top: 30px; /* Espacio antes de la sección de contacto */
+}
+.contact-info {
+    margin-top: 30px; 
+    margin: auto;
+}
+
+.body-anuncios .contact-info h3 {
+    color: #000000; 
+    font-size: 22px;
+    margin-bottom: 15px; 
+}
+
+.contact-info p {
+color: #000000;
+}
+
+
+.body-anuncios .contact-info p {
+    margin-bottom: 10px; /* Espacio entre elementos de contacto */
+}
+
+.body-anuncios a {
+    color: #1a0dab; /* Color azul para los enlaces, buena visibilidad */
+    text-decoration: none; /* Sin subrayado para mantener la limpieza */
+}
+
+.body-anuncios a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor para indicar interactividad */
+}
+
+@media (max-width: 768px) {
+    .steps-to-success{
+        width: 100%;
+    }
+    .body-anuncios .contact-info {
+        width: 100%;
+
+    }
+  
+    .body-anuncios {
+       
+        margin-bottom: 100px;
+        
+    }
+    }

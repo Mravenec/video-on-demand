@@ -64,16 +64,20 @@
   margin-left: 200px;
  }
  
+ @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;1,200&display=swap');
+
  .user-info {
-  background: #f3f3f3;
+  width: 80%;
   padding: 20px;
-  border-radius: 8px;
+  border: 1px solid #8f3b1b;
+  border-radius: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
- }
+}
  
  .user-info h2 {
   margin-bottom: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
  }
  
  .user-info p {
@@ -114,10 +118,11 @@
     width: 100% !important;
     height: 80px !important;
   }
- 
+
   .content-area,
   .content-area-expanded {
- 
+    margin-top: 30%;
+
     margin-left: 0px;
     padding: 0%;
  

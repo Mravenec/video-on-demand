@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../store/actions/authActions';
 import './LoginForm.css';
@@ -54,8 +55,11 @@ function LoginForm() {
   };
 
   return (
+    <div className='body'>
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+      <h2>Iniciar Sesión</h2>
+
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input 
@@ -76,14 +80,18 @@ function LoginForm() {
             onClick={togglePasswordVisibility}  // Alternar visibilidad al hacer clic
           />
           {errors.password && <span className="error-message">La contraseña es obligatoria</span>}
+          <div className="login-footer2">
+          <Link to="/iniciar-sesion/olvide-contrasena">Olvidé mi contraseña</Link>
+      </div>
         </div>
+
         {authFailed && <span className="error-message">No se pudo iniciar sesión. Por favor, inténtalo de nuevo.</span>}
         <button type="submit">Iniciar Sesión</button>
       </form>
       <div className="login-footer">
-        <Link to="/iniciar-sesion/registrarse">Registrarse</Link>
-        <Link to="/iniciar-sesion/olvide-contrasena">Olvidé mi contraseña</Link>
+        <p>¿No tienes una cuenta? <Link to="/iniciar-sesion/registrarse">Registrate</Link></p>
       </div>
+    </div>
     </div>
   );
 }

@@ -1,47 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;1,200&display=swap');
+
 * {
     box-sizing: border-box;
+    
+    
 }
 
+.bodySign{
+    display: flex;
+    margin:  auto;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+
+    margin-bottom : 30px;
+    height: 95vh;
+   
+}
 .signup-form {
     display: flex;
+    background-color: #0000007c;
+
+    font-family: "Raleway", sans-serif;
     flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-    margin: 0px auto;
-    padding: 1px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow-y: auto; /* Agrego scroll vertical cuando sea necesario */
-    max-height: 350px; /* Establezco una altura máxima menor que el contenido actual */
+    margin-top: 60px;
+
+    width: 500px;
+    margin-bottom: 40px;
+
+    border: 1px solid #e07a2f;
+    border-radius: 30px;
+   padding: 20px;
+
 }
 
 .signup-form .form-group {
     margin-bottom: 15px;
+    align-self: center;
+    width: 100%;
+
+
 }
 
+.text{
+    text-align: start;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    
+    font-weight: bolder;
+    
+}
+
+.sub{
+    font-family: "Raleway", sans-serif;
+    margin-top: -10px;
+margin-bottom: 35px;
+}
 .signup-form label {
+  
     display: block;
     margin-bottom: 5px;
 }
 
 .signup-form input {
-    width: calc(100% - 22px); 
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    border: 1px solid #e07a2f;
+    border-radius: 10px;
 }
 
 .signup-form button {
-    background-color: #007BFF;
-    color: white;
-    padding: 5px 15px;
+    padding: 12px;
     border: none;
-    border-radius: 3px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #8f3b1b 0%, #e07a2f 50%, #8f3b1b 100%);    
+    width: 200px;
+    align-self: center;
+    font-family: "Raleway", sans-serif;
+font-weight: 800;
+font-size: 12pt;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s;
-    align-self: center;
-    font-size: 14px;
-    height: auto;
 }
 
 .signup-form button:hover {
@@ -61,4 +99,24 @@
     align-items: center;
     font-size: 24px;
     z-index: 9999;
+}
+
+.nota{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
+}
+
+@media (max-width: 768px) {
+    .signup-form {
+        width: 100%;
+        margin: 40px auto;
+        padding: 15px;
+     
+    }
+    .bodySign{
+        height: 100%;
+        padding: 20px;
+       }
+    
+    
 }

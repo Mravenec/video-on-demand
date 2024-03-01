@@ -25,15 +25,18 @@ import HeaderQuienesSomos from './components/pages/QuienesSomos/HeaderQuienesSom
 import BodyQuienesSomos from './components/pages/QuienesSomos/BodyQuienesSomos';
 
 // Anuncios
-import HeaderAnuncios from './components/pages/Anuncios/HeaderAnuncios';
-import BodyAnuncios from './components/pages/Anuncios/BodyAnuncios';
+//import HeaderComoIniciar from './components/pages/ComoIniciar/HeaderComoIniciar';
+import BodyComoIniciar from './components/pages/ComoIniciar/BodyComoIniciar';
+
+// Testimonios
+import BodyTestimonios from './components/pages/Testimonios/BodyTestimonios';
 
 // Contactenos
 import HeaderContactenos from './components/pages/Contactenos/HeaderContactenos';
 import BodyContactenos from './components/pages/Contactenos/BodyContactenos';
 
 // IniciarSesion
-import HeaderIniciarSesion from './components/pages/IniciarSesion/HeaderIniciarSesion';
+//import HeaderIniciarSesion from './components/pages/IniciarSesion/HeaderIniciarSesion';
 import BodyIniciarSesion from './components/pages/IniciarSesion/BodyIniciarSesion'; 
 import LoginForm from './components/pages/IniciarSesion/LoginForm';
 import SignupForm from './components/pages/IniciarSesion/SignupForm';
@@ -59,9 +62,11 @@ function AppWrapper() {
       <Routes>
         <Route path="/" element={<><HeaderHome /><BodyHome /></>} />
         <Route path="/quienes-somos" element={<><HeaderQuienesSomos /><BodyQuienesSomos /></>} />
-        <Route path="/anuncios" element={<><HeaderAnuncios /><BodyAnuncios /></>} />
+        <Route path="/testimonios" element={<BodyTestimonios />}/>
+        <Route path="/como-iniciar" element={<><BodyComoIniciar /></>} />
+
         <Route path="/contactenos" element={<><HeaderContactenos /><BodyContactenos /></>} />
-        <Route path="/iniciar-sesion/*" element={<><HeaderIniciarSesion /><BodyIniciarSesion /></>}>
+        <Route path="/iniciar-sesion/*" element={<><BodyIniciarSesion /></>}>
           <Route index element={<LoginForm />} />
           <Route path="registrarse" element={<SignupForm />} />
           <Route path="olvide-contrasena" element={<ForgotPasswordForm />} />

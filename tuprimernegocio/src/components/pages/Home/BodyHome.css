@@ -5,7 +5,8 @@
   padding: 40px;
   text-align: left;
   flex-direction: column;
-  height: 100%; /* Para asegurar que ocupe toda la altura y pueda centrar el contenido verticalmente */
+  height: 65vh;
+  
 }
 
 .body-home img {
@@ -30,6 +31,7 @@
 @media (min-width: 768px) {
   .body-home {
     flex-direction: row;
+
   }
 
   .body-home p {

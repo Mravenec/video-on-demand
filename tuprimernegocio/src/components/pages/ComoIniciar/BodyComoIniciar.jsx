@@ -1,8 +1,12 @@
 import React from 'react';
-import './BodyAnuncios.css';
+import './BodyComoIniciar.css';
+
+import { HiOutlineMail} from "react-icons/hi";
+import { FaWhatsapp } from "react-icons/fa";
 
 function BodyAnuncios() {
   return (
+    
     <div className="body-anuncios">
       <h2>Explora el Camino Menos Transitado</h2>
       <p>
@@ -29,9 +33,19 @@ function BodyAnuncios() {
       <div className="contact-info">
         <h3>Comienza tu Viaje Hoy</h3>
         <p>Conecta con nosotros y descubre cómo puedes ser parte de este emocionante viaje. Estamos aquí para guiarte en cada curva y acelerar tu éxito.</p>
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+            <HiOutlineMail size={30} style={{ marginRight: '10px' }}/> 
+        
         <p>Email: <a href="mailto:info@tuprimernegocio.org">info@tuprimernegocio.org</a></p>
+        </div>
+
+
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                <FaWhatsapp size={30} style={{ marginRight: '10px', color:'green' }}/> 
+                
         <p>Whatsapp: <a href="https://wa.me/50671902300">+(506) 7190 2300</a></p>
-      </div>
+        </div>
+        </div>
     </div>
   );
 }

@@ -38,16 +38,23 @@ function SignupForm() {
     };
 
     return (
-        <div>
+        <div className='bodySign'>
+           
             {/* Pop-up de éxito */}
             {showPopup && <div className="popup">Registro exitoso, redirigiendo...</div>}
+           
             <form className="signup-form" onSubmit={handleSubmit(onSubmit)}>
+            <div className="text">
+            <h1>Regístrate</h1>
+            <p className='sub'>Completa los campos y únete a nosotros</p>
+            </div>
+
                 {registerError && <div className="error">{registerError}</div>}
                 {registerSuccess && <div className="success">Registro exitoso</div>}
                 <div className="form-group">
                     <label htmlFor="signup-username">Nombre Completo:</label>
                     <input type="text" id="signup-username" {...formRegister('username', { required: 'El nombre de usuario es obligatorio' })} />
-                    {errors.username && <span>{errors.username.message}</span>}
+                    {errors.username && <span className="nota" style={{ color: 'red' }}>{errors.username.message}</span>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="signup-email">Correo Electrónico:</label>
@@ -58,7 +65,7 @@ function SignupForm() {
                             message: 'Formato de correo electrónico inválido'
                         }
                     })} />
-                    {errors.email && <span>{errors.email.message}</span>}
+                    {errors.email && <span className="nota" style={{ color: 'red' }}>{errors.email.message}</span>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="signup-password">Contraseña:</label>
@@ -69,15 +76,17 @@ function SignupForm() {
                             message: 'La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número'
                         }
                     })} />
-                    {errors.password && <span>{errors.password.message}</span>}
+                    {errors.password && <span className="nota" style={{ color: 'red' }}>{errors.password.message}</span>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="signup-password-confirm">Confirmar Contraseña:</label>
                     <input type="password" id="signup-password-confirm" {...formRegister('passwordConfirm', { required: 'La confirmación de la contraseña es obligatoria' })} />
-                    {errors.passwordConfirm && <span>{errors.passwordConfirm.message}</span>}
+                    {errors.passwordConfirm && <span className="nota" style={{ color: 'red' }}>{errors.passwordConfirm.message}</span>}
                 </div>
                 <button type="submit">Registrarse</button>
             </form>
+            <div className="login-footer">
+      </div>
         </div>
     );
 }

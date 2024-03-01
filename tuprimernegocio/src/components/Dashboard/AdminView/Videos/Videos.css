@@ -1,11 +1,9 @@
-body {
-  background: linear-gradient(to bottom, #c2d7e4, #e0e9f1); /* Gradiente azul grisáceo */}
+
 
 
 @media (max-width: 768px) {
  
-  footer {
-    display: none;
-   
+ 
     
-  }  }
+  }  
+  

@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { AiOutlinePlus, AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'; // Importa los iconos
+import { RxPencil2 } from "react-icons/rx";
+import { GoTrash } from "react-icons/go";
+import { MdMovieEdit } from "react-icons/md";
+
+import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
+
 import { RiPencilLine } from 'react-icons/ri'; // Importa el ícono de lápiz para editar URL
 import {
   fetchVideos,
@@ -17,6 +23,8 @@ import {
   updateVideoDescription, // Importa la acción para actualizar la descripción del video
 } from '../../../../store/actions/authActions';
 import ReactPlayer from 'react-player';
+import 'react-tabs/style/react-tabs.css';
+
 import './Videos.css';
 
 const Videos = () => {
@@ -206,7 +214,7 @@ const Videos = () => {
                       onClick={() => startEditingVideoTitle(selectedVideo.id)}
                       className="edit-icon"
                     >
-                      <AiOutlineEdit />
+                      <AiOutlineEdit  />
                     </span>
                   </>
                 )}
@@ -221,21 +229,32 @@ const Videos = () => {
 
               onEnded={() => markAsWatched(selectedVideo.id)}
             />
+             <Tabs>
+             <TabList  >
+    <Tab >Descripción</Tab>
+    <Tab>Recursos</Tab>
+  </TabList>
+
+  <TabPanel>
             <div className="video-content">
+             
               <p>
                 {selectedVideo.content}
                 <span
                   onClick={() => openDescriptionModal(selectedVideo.content)}
                   className="edit-description-icon"
                 >
-                  <RiPencilLine />
+                  <RiPencilLine  />
                 </span>
               </p>
             </div>
+            </TabPanel>
+            </Tabs>
           </>
         ) : (
           <p>No hay un video seleccionado</p>
         )}
+        
       </div>
       <div className="SideBarVideos">
         {videosData?.length > 0 ? (
@@ -268,7 +287,7 @@ const Videos = () => {
                       onClick={() => startEditingSectionName(section.section_id)}
                       className="edit-icon"
                     >
-                      <AiOutlineEdit />
+                      <RxPencil2 size={22} style={{ marginLeft: '10px', marginRight: '10px', padding:'2px', borderRadius:'5px',  color:'white' }}/>
                     </span>
                   </>
                 )}
@@ -276,7 +295,7 @@ const Videos = () => {
                   onClick={() => handleDeleteSection(section.section_id)}
                   className="delete-icon"
                 >
-                  <AiOutlineDelete />
+                  <GoTrash size={22} style={{padding:'2px', borderRadius:'5px',  color:'white' }}/>
                 </span>
               </button>
               {accordionState[section.section_id] && (
@@ -298,14 +317,14 @@ const Videos = () => {
                           {video.sequence_number}
                         </div>
                         <div
-                          className="video-thumbnail"
-                          style={{ backgroundImage: `url(${video.url})` }}
+                          // className="video-thumbnail"
+                          // style={{ backgroundImage: `url(${video.url})` }}
                         >
                           <span
                             onClick={() => handleEditVideoUrl(video.id)}
                             className="edit-icon" // Agregar ícono de lápiz para editar URL
                           >
-                            <RiPencilLine />
+                            <MdMovieEdit size={22} style={{ marginRight: '8px',  color:'white'}} />
                           </span>
                         </div>
                         <span>

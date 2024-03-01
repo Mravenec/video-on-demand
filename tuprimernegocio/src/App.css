@@ -1,8 +1,9 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+
+
 }
 
 /* Estilos generales para la navbar */
@@ -12,9 +13,9 @@ body {
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
+  align-items: center; 
+} 
+ 
 .navbar a {
   color: white;
   margin: 0 1rem;
@@ -41,12 +42,13 @@ body {
   color: white;
   padding: 1rem;
   text-align: center;
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
+
 }
 
-/* Form styles */
+/* Form styles */ 
 .form {
   background-color: #fff;
   padding: 2rem;

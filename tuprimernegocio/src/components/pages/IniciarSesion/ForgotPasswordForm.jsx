@@ -31,6 +31,8 @@ function ForgotPasswordForm() {
     };
 
     return (
+
+        <div className='body'>
         <div className="forgot-password-form">
             <h2>Restablecer Contraseña</h2>
             <form onSubmit={handleSubmit}>
@@ -48,6 +50,7 @@ function ForgotPasswordForm() {
                 {forgotPasswordError && <div className="error-message">{forgotPasswordError}</div>}
             </form>
             {showPopup && <div className="popup">Enlace de restablecimiento enviado, por favor revisa la bandeja de entrada de tu correo electrónico...</div>}
+        </div>
         </div>
     );
 }

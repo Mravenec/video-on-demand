@@ -17,6 +17,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para las tarjetas */
     border-radius: 10px; /* Bordes redondeados */
     background-color: #ffffff; /* Fondo blanco para destacar sobre un posible fondo */
+    color: black;
 }
 
 .contact-info {

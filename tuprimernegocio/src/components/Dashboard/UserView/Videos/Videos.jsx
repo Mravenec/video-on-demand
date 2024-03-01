@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchVideosByUser, markVideoAsWatched, unmarkVideoAsWatched } from '../../../../store/actions/authActions';
 import ReactPlayer from 'react-player';
+import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+
 import '../Videos/Videos.css';
 
 const Videos = () => {
@@ -124,10 +127,11 @@ const Videos = () => {
   };
 
  
+  const [activeTab, setActiveTab] = useState(0);
 
 
   return (
-    <div className="videos-container">
+<div className="videos-container">
       <div className="main-content">
         {selectedVideo ? (
           <>
@@ -137,7 +141,8 @@ const Videos = () => {
             <ReactPlayer
               url={selectedVideo.url}
               controls
-              
+              width="155vh"
+              height="65vh"
               className= "react-player"
               onEnded={advanceToNextVideo}
             />
@@ -156,18 +161,29 @@ const Videos = () => {
                 </div>
               )}
           </div>
+          <Tabs  selectedIndex={activeTab} onSelect={index => setActiveTab(index)}>
+             <TabList >
+    <Tab >Descripción</Tab>
+    <Tab>Recursos</Tab>
+  </TabList>
+
+  <TabPanel>
+    
             <div className="video-content">
           
               <p >{selectedVideo.content}</p>
           
 
             </div>
+            </TabPanel>
+            </Tabs>
           </>
         ) : (
           <p>No hay un video seleccionado</p>
         )}
 
       </div>
+
       
 <div className="SideBarVideos">
         {videosData && videosData.length > 0 ? (
@@ -179,6 +195,7 @@ const Videos = () => {
               >
                 <div className="sequence-box">{section.section_sequence_number}</div>
                 {section.section_name}
+                
               </button>
               {accordionState[section.section_id] && section.videos && section.videos.length > 0 ? (
                 section.videos.map((video) => (

@@ -17,7 +17,9 @@ const Navbar = () => {
       <ul className={`navbar-list ${menuOpen ? 'active' : ''}`}>
         <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
         <li><Link to="/quienes-somos" onClick={() => setMenuOpen(false)}>¿Quiénes somos?</Link></li>
-        <li><Link to="/anuncios" onClick={() => setMenuOpen(false)}>Anuncios</Link></li>
+        <li><Link to="/testimonios" onClick={() => setMenuOpen(false)}>Testimonios</Link></li>
+        <li><Link to="/como-iniciar" onClick={() => setMenuOpen(false)}>¿Como iniciar?</Link></li>
+
         <li><Link to="/contactenos" onClick={() => setMenuOpen(false)}>Contáctenos</Link></li>
         <li><Link to="/iniciar-sesion" onClick={() => setMenuOpen(false)}>Iniciar sesión</Link></li>
       </ul>

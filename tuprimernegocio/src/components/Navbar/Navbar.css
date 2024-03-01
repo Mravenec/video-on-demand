@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;1,200&display=swap');
+
 .navbar {
   background-color: black;
   padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-between;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
   align-items: center;
   position: relative; 
 }
@@ -16,7 +22,7 @@
   color: white;
   font-weight: bold;
   margin-right: 1rem;
-  font-size: 0.9rem; /* Ajusta este valor según prefieras. */
+  font-size: 0.8rem; /* Ajusta este valor según prefieras. */
 }
 
 .navbar-list {
@@ -40,7 +46,7 @@
 
 .navbar-list li a:hover {
   color: #ddd;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #5c2705;
 }
 
 @media (max-width: 768px) {

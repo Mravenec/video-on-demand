@@ -7,15 +7,19 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin-top: 500px;
   padding: 1px -5%; /* Puedes ajustar este valor para reducir aún más la altura */
   height: 40px; /* Establecer una altura específica */
-  position: relative; /* Agregar posición relativa para que z-index funcione */
+  position: fixed; /* Agregar posición relativa para que z-index funcione */
+    z-index: 1; /* Asegurar que el view-selector esté en primer plano */
+
 }
 
 .view-selector,
 .logout-button {
   position: relative; /* Agregar posición relativa para que z-index funcione */
-  z-index: 1; /* Asegurar que el view-selector esté en primer plano */
+  border-radius: 10px;
+
 }
 
 .h1-container {
@@ -26,24 +30,21 @@
 }
 
 .logout-button {
-  background-color: #007bff;
+  background: #e07a2f;    
   color: white;
+  margin-left: 1px;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 12px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 @media (max-width: 768px) {
   .header {
-    display: none;
+    margin-top: 85%;
   }
 
-  .view-selector,
-  .logout-button {
-    margin-top: 5px;
-    align-items: flex-end;
-  }
+ 
 
   .h1-container {
 display: none;
